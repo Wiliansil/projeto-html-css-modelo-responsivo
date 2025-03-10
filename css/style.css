@@ -1,9 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
 :root {
   --preto: rgb(0, 0, 0);
   --branco: rgb(255, 255, 255);
   --cinza: rgb(221, 220, 220);
   --verde: rgb(9, 123, 9);
   --verde2: rgb(100, 247, 100);
+
+  --corprojeto1: rgb(172, 10, 10);
+  --corprojeto2: rgb(224, 16, 16);
+  --corprojeto3: rgb(151, 42, 42);
+  --corprojeto4: rgb(170, 170, 21);
+  --corprojeto5: rgb(247, 247, 7);
+  --corprojeto6: rgb(255, 136, 0);
 }
 
 * {
@@ -15,12 +24,17 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
+  scroll-behavior: smooth;
 }
 
 header {
-  background-color: var(--preto);
+  background: linear-gradient(
+    var(--corprojeto6),
+    var(--corprojeto1),
+    var(--corprojeto1),
+    var(--corprojeto1)
+  );
   color: var(--branco);
-  padding: 1%;
   position: fixed;
   width: 100%;
 }
@@ -44,7 +58,12 @@ a:hover {
 }
 
 footer {
-  background-color: var(--preto);
+  background: linear-gradient(
+    var(--corprojeto1),
+    var(--corprojeto1),
+    var(--corprojeto1),
+    var(--corprojeto6)
+  );
   color: var(--branco);
   padding: 1%;
   text-align: center;
@@ -75,15 +94,55 @@ aside {
   box-shadow: 2px 2px 7px;
 }
 
-h1 {
-  font-size: 2em;
-  margin-top: 3%;
-}
-h2 {
+.menu {
+  color: var(--branco);
+  background-color: var(--corprojeto1);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--corprojeto6);
   font-size: 1.5em;
 }
+
+h1 {
+  font-size: 3em;
+  margin-top: 3%;
+  text-align: center;
+  color: var(--corprojeto1);
+  font-family: "Kaushan Script", serif;
+  text-shadow: 2px 2px 4px var(--corprojeto6);
+}
+h2 {
+  font-size: 2.5em;
+  color: var(--corprojeto1);
+  text-align: center;
+  text-shadow: 1px 1px 2px;
+  font-family: "Kaushan Script", serif;
+  text-shadow: 2px 2px 4px var(--corprojeto6);
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2em;
+    margin-top: 3%;
+    text-align: center;
+    color: var(--corprojeto1);
+    font-family: "Kaushan Script", serif;
+    text-shadow: 2px 2px 4px var(--corprojeto6);
+  }
+  h2 {
+    font-size: 2em;
+    color: var(--corprojeto1);
+    text-align: center;
+    text-shadow: 1px 1px 2px;
+    font-family: "Kaushan Script", serif;
+    text-shadow: 2px 2px 4px var(--corprojeto6);
+  }
+}
+
 h3 {
-  font-size: 2em;
+  font-size: 3em;
+  font-family: "Kaushan Script", serif;
+  text-shadow: 2px 2px 4px var(--preto);
 }
 h4 {
   font-size: 1em;
@@ -96,6 +155,37 @@ h5,
 h6 {
   padding-top: 0.5%;
   padding-bottom: 0.5%;
+}
+#topo {
+  width: 400px;
+  height: 130px;
+  display: block;
+  margin: auto;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  #topo {
+    width: 344px;
+    height: 70px;
+    display: block;
+    margin: auto;
+  }
+}
+
+#rodape {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: auto;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  #rodape {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+  }
 }
 
 img {
@@ -122,12 +212,14 @@ p {
 
 @media (min-width: 300px) and (max-width: 1024px) {
   .separador {
-    margin-top: 18%;
+    margin-top: 20%;
   }
 }
 
-#grid-conteudo {
-  background-color: var(--cinza);
+.grid-conteudo {
+  background-color: var(--branco);
+  padding: 0.5%;
+  border: 20px;
 }
 
 .grid {
@@ -135,13 +227,15 @@ p {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   max-width: 1024px;
   margin: auto;
-  gap: 2px;
+  gap: 8px;
 }
 
 .grid div {
   background-color: var(--branco);
   text-align: center;
   padding: 2px;
+  box-shadow: 4px 4px 10px var(--corprojeto6);
+  border-radius: 20px;
 }
 
 button {
@@ -159,4 +253,27 @@ button {
 button:hover {
   background-color: var(--verde2);
   text-shadow: 1px 1px var(--preto);
+}
+
+#whats {
+  width: 100px;
+  height: 50px;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  margin: 5em;
+}
+
+@media (min-width: 300px) and (max-width: 1024px) {
+  #whats {
+    width: 80px;
+    height: 30px;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    margin: 5em;
+    margin-right: 8px;
+  }
 }
